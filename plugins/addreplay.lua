@@ -24,7 +24,7 @@ local function list_chats(msg)
     local names = redis:hkeys(hash) 
     local text = '📌¦الردود هي  : ️\n\n' 
     for i=1, #names do 
-      text = text..'تم اضافه الرد ☑️ '..names[i]..'\n' 
+      text = text..'تــم اضــافــه رد ✅️ 📛'..names[i]..'\n' 
     end 
     	tdcli.sendMessage(msg.chat_id_, 0, 1, text, 1, 'md') 
    else 
@@ -42,7 +42,7 @@ local function save_value(msg, name, value)
   end 
   if hash then 
     redis:hset(hash, name, value) 
-   tdcli.sendMessage(msg.chat_id_, 0, 1, '('..name..')\n ☑️ تم اضافه الرد' , 1, 'md') 
+   tdcli.sendMessage(msg.chat_id_, 0, 1, '('..name..')\n  'تــم اضــافــه رد ✅️ 📛 , 1, 'md') 
   end 
 end 
 local function del_value(msg, name) 
@@ -55,7 +55,7 @@ local function del_value(msg, name)
   end 
   if hash then 
     redis:hdel(hash, name) 
-   	tdcli.sendMessage(msg.chat_id_, 0, 1, '('..name..')\nتم حذف الرد ☑️ ' , 1, 'md') 
+   	tdcli.sendMessage(msg.chat_id_, 0, 1, '('..name..')\n  'تــم اضــافــه رد ✅️ 📛 , 1, 'md') 
   end 
 end 
 
@@ -108,4 +108,4 @@ return {
   },
   run = run
 }
---  @TH3BOSS
+--  @pompm
